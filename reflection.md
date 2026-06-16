@@ -40,8 +40,13 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+  For this project I used Claude. 
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+**Example of Correct** -  Bug: Reversed High/Low Hint Messages. 
 
+The AI correctly identified and fixed the hint logic bug in the `check_guess()` function. The outcome labels ("Too High", "Too Low") were correct, but the hint messages were swapped. I tested the fix with pytest cases that specifically checked both the outcome AND the message direction, ensuring the hints now correctly guide player
+
+**Example of Incorrect** -  Bug: Duplicate code refactoring. The AI correctly identified and refactored the `get_range_for_difficulty()` function. However, it forgot to remove the duplicate from app.py after refactoring. It also did not update the import statement accordingly. After deleting the duplicate, the game still worked correctly. 
 ---
 
 ## 3. Debugging and testing your fixes
