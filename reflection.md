@@ -5,18 +5,32 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+
+The game appeared to be functioning correctly. I could easily change the difficulty level, enter a guess, hit submit, and receive hints telling me to guess lower or higher. However, after playing the game a few times, I noticed the game was running incorrectly. Continue reading to learn about the bugs I discovered.
+
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+
+1. Never ending game 
+  The first time I ran this project, the game never ended. For example, I attempted to guess the number until I reached a maximum of 8 attempts. After reaching those attempts, I tried to click 'New Game,' but the game would not reset. My previous guess would still be in the text box, and the message "Game over. Start a new game to try again." would not disappear
+
+  Also, impossible to restart the game after winning. Previous submission does not erase, new attempts do not update. 
+
+2. Incorrect number of attempts
+  The number of attempts begin at 1 not 0. This means the user has one less attempt to guess. 
+
+3. Incorrect hint
+  The hints were inaccurate. The game would tell me to guess lower when the secret number was actually higher and vice versa
 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|N/A |"Attempts left: 8 ", on normal difficulty |"Attempts left: 7 ", on normal difficulty|None|
+|guess of 60|"Go LOWER!", hint shown |"Go HIGHER!", hint shown |None|                     
+|"New Game" btn click |New game starts, hint messages disappear, previous guess is cleared |Nothing, cant end game. Previous guess is still entered. Hint messages don't disappear. Can't submit guess |None |
+|guess of 12 |"Go HIGHER!", hint shown |"Go LOWER!", hint shown |None |
 
 ---
 
