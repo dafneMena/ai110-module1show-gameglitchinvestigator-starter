@@ -1,15 +1,6 @@
 import random
 import streamlit as st
-from logic_utils import check_guess
-
-def get_range_for_difficulty(difficulty: str):
-    if difficulty == "Easy":
-        return 1, 20
-    if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
-        return 1, 50
-    return 1, 100
+from logic_utils import check_guess, get_range_for_difficulty
 
 
 def parse_guess(raw: str):
@@ -69,14 +60,20 @@ attempt_limit = attempt_limit_map[difficulty]
 
 low, high = get_range_for_difficulty(difficulty)
 
+#  FIX: Display the correct range for the selected difficulty level
 st.sidebar.caption(f"Range: {low} to {high}")
 st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
+
+# FIX: Regenerate secret if it falls outside the new difficulty's range when switching difficulties
+if "secret" in st.session_state and not (low <= st.session_state.secret <= high):
+    st.session_state.secret = random.randint(low, high)
 
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
+# FIX: Attempts start at 0 not 1, this allows the player to have the full number of attempts as defined by attempt_limit before losing.
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    st.session_state.attempts = 0
 
 if "score" not in st.session_state:
     st.session_state.score = 0
@@ -116,7 +113,7 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
     st.rerun()
 

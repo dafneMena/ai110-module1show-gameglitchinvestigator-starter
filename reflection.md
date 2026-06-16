@@ -20,7 +20,7 @@ The game appeared to be functioning correctly. I could easily change the difficu
 3. **Incorrect hint** - 
   The hints were inaccurate. The game would tell me to guess lower when the secret number was actually higher and vice versa
 
-4. **Secret number is not always within range of difficulty** The number range of each diffculty varies. The issue is the secret number sometimes exceeds the range of the hard and easy level.
+4. **Secret number is not always within range of difficulty** - The number range of each diffculty varies. The issue is the secret number sometimes exceeds the range of the hard and easy level.
 
 **Bug Reproduction Log**
 
@@ -41,7 +41,6 @@ Document at least 3 bugs you found. Add rows as needed.
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-- Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
 
