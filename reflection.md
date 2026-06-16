@@ -12,9 +12,7 @@ The game appeared to be functioning correctly. I could easily change the difficu
   (for example: "the hints were backwards").
 
 1. **Never ending game** - 
-  The first time I ran this project, the game never ended. For example, I attempted to guess the number until I reached a maximum of 8 attempts. After reaching those attempts, I tried to click 'New Game,' but the game would not reset. My previous guess would still be in the text box, and the message "Game over. Start a new game to try again." would not disappear
-
-  Also, impossible to restart the game after winning. Previous submission does not erase, new attempts do not update. 
+  The first time I ran this project, the game never ended. For example, I attempted to guess the number until I reached a maximum of 8 attempts. After reaching those attempts, I tried to click 'New Game,' but the game would not reset. My previous guess would still be in the text box, and the message "Game over. Start a new game to try again." would not disappear. Also, impossible to restart the game after winning. Previous submission does not erase, new attempts do not update. 
 
 2. **Incorrect number of attempts** - 
   The number of attempts begin at 1 not 0. This means the user has one less attempt to guess. 
@@ -22,16 +20,19 @@ The game appeared to be functioning correctly. I could easily change the difficu
 3. **Incorrect hint** - 
   The hints were inaccurate. The game would tell me to guess lower when the secret number was actually higher and vice versa
 
+4. **Secret number is not always within range of difficulty** The number range of each diffculty varies. The issue is the secret number sometimes exceeds the range of the hard and easy level.
+
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|----------------------|
-| N/A | "Attempts left: 8 ", on normal difficulty | "Attempts left: 7 ", on normal difficulty | None |
-| guess of 60 | "Go LOWER!", hint shown | "Go HIGHER!", hint shown | None |
+| No input, starting a new game | "Attempts left: 8 ", on normal difficulty | "Attempts left: 7 ", on normal difficulty | None |
+| guess of 60 | "Go LOWER!", hint shown since the secret is 27 | "Go HIGHER!", hint shown | None |
 | "New Game" btn click | New game starts, hint messages disappear, previous guess is cleared | Nothing, can't end game. Previous guess is still entered. Hint messages don't disappear. Can't submit guess | None |
 | guess of 12 | "Go HIGHER!", hint shown | "Go LOWER!", hint shown | None |
+| Easy difficulty, guess of 29 | "Number is not within range. Please guess between 1 to 20" | "You won! The secret was 29. Final score: 80" | None |
 
 
 ---
