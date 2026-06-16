@@ -39,34 +39,40 @@ Document at least 3 bugs you found. Add rows as needed.
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?\
   For this project I used Claude. 
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+
 **Example of Correct** -  Bug: Reversed High/Low Hint Messages. 
 
-The AI correctly identified and fixed the hint logic bug in the `check_guess()` function. The outcome labels ("Too High", "Too Low") were correct, but the hint messages were swapped. I tested the fix with pytest cases that specifically checked both the outcome AND the message direction, ensuring the hints now correctly guide player
+The AI correctly identified and fixed the hint logic bug in the `check_guess()` function. The outcome labels ("Too High", "Too Low") were correct, but the hint messages were swapped. I tested the fix with pytest cases that specifically checked both the outcome AND the message direction, ensuring the hints now correctly guide player.
 
-**Example of Incorrect** -  Bug: Duplicate code refactoring. The AI correctly identified and refactored the `get_range_for_difficulty()` function. However, it forgot to remove the duplicate from app.py after refactoring. It also did not update the import statement accordingly. After deleting the duplicate, the game still worked correctly. 
+**Example of Incorrect** - Bug: Duplicate code refactoring. The AI correctly identified and refactored the `get_range_for_difficulty()` function. However, it failed to remove the duplicate implementation from `app.py` after the refactoring and did not update the corresponding import statement. Once the duplicate code was removed and the import was corrected, the game continued to function properly.
+
 ---
 
 ## 3. Debugging and testing your fixes
 
-- How did you decide whether a bug was really fixed?
-- Describe at least one test you ran (manual or using pytest)  
-  and what it showed you about your code.
-- Did AI help you design or understand any tests? How?
-
+- How did you decide whether a bug was really fixed?\
+  I decided that a bug was really fixed by running a manual test. This meant I refreshed the page after making changes to the code and ran it with multiple inputs. I also had Claude create multiple pytest. 
+- Describe at least one test you ran (manual or using pytest) and what it showed you about your code.\
+I ran a pytest on the hint logic. The test explicitly verified the directions were correct. It tested the winning condition and the high and low detection.
+- Did AI help you design or understand any tests? How?\
+Yes this is my first time creating pytest. AI wrote all of my tests for the 'check_guess' function.
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?\
+Streamlit executes your script from top to bottom whenever the user interacts with the app.
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+  - This could be a testing habit, a prompting strategy, or a way you used Git.\
+  Creating meaningful commits and not just a singular commit at the end.
+- What is one thing you would do differently next time you work with AI on a coding task?\
+  Be more precise and intentional with the way I describe error messages. 
+- In one or two sentences, describe how this project changed the way you think about AI generated code.\
+  AI generated code can make the job easier if you know how to check the work! 
