@@ -25,8 +25,7 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-## Game Flow
+- [X] Describe the game's purpose.
 
 1. **Select a Difficulty Level**
    - Determines the range of numbers and attempt limit:
@@ -52,7 +51,7 @@ It wrote the code, ran away, and now the game is unplayable.
    - **Win**: Guess the number before attempts run out
    - **Lose**: Exhaust all attempts without guessing correctly
 
-## Key Features
+Key Features
 
 - Difficulty-based gameplay with different ranges and attempt limits
 - Score tracking system
@@ -60,7 +59,7 @@ It wrote the code, ran away, and now the game is unplayable.
 - Developer debug mode to view game state
 - Dynamic difficulty switching with secret number regeneration
 
-- [ ] Detail which bugs you found.
+- [X] Detail which bugs you found.
 
 1. **Never ending game** - 
   The first time I ran this project, the game never ended. For example, I attempted to guess the number until I reached a maximum of 8 attempts. After reaching those attempts, I tried to click 'New Game,' but the game would not reset. My previous guess would still be in the text box, and the message "Game over. Start a new game to try again." would not disappear. Also, impossible to restart the game after winning. Previous submission does not erase, new attempts do not update. 
@@ -74,7 +73,7 @@ It wrote the code, ran away, and now the game is unplayable.
 4. **Secret number is not always within range of difficulty** - The number range of each diffculty varies. The issue is the secret number sometimes exceeds the range of the hard and easy level.
 
 
-- [ ] Explain what fixes you applied.
+- [X] Explain what fixes you applied.
 
 1. Wrong Attempt Counting
 - **Problem**: Attempts started at 1, reducing the actual number of guesses allowed
@@ -117,13 +116,11 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 
 **Screenshot**: 
 
+<img width="665" height="855" alt="image" src="https://github.com/user-attachments/assets/7bb0bdb7-cbe8-492d-b524-a107a824651e" />
+
 
 ## 🧪 Test Results
 
-```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
 ```
 collected 19 items                                                                                                                                                               
 tests/test_game_logic.py::test_winning_guess PASSED                                                                                                                        [  5%]
@@ -147,6 +144,8 @@ tests/test_game_logic.py::TestSecretRangeValidation::test_secret_at_easy_upper_b
 tests/test_game_logic.py::TestSecretRangeValidation::test_secret_outside_easy_range_from_normal PASSED                                                                     [100%]
 
 ============================================================================== 19 passed in 0.04s ===============================================================================
+```
+
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, describe the Enhanced UI changes here — a screenshot is optional]
